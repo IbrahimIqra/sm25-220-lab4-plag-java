@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>A4_Sec22_24101221_SADIA-AFRIN-ATHOI.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec08_24301112_Rubaiyet-Bin-Zaman.txt<p></p><pre>
+//Assignment 1
+public void remove(Integer key){
+    int index = hashFunction(key);
+
+    if (ht[index] == null){
+        return;
+    }
+
+    if (ht[index].key.equals(key)) {
+        ht[index] = ht[index].next;
+        return;
+    }
+
+    PairNode prev = ht[index];
+<a name="2"></a><font color="#0000FF"><a href="match87-0.html#2" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_12.gif"/></a>
+
+    PairNode curr = ht[index].next;
+
+    while (curr != null) {
+        if (curr.key.equals(key)) {
+            prev.next = curr.next; 
+            return;
+        }
+        prev = curr;
+        curr = curr.next;
+</font>    }
+}   
+
+ //Assignment2
+<a name="0"></a><font color="#FF0000"><a href="match87-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_27.gif"/></a>
+
+   public static int diamondCount(Stack stack, String str) {
+        int count = 0;
+    
+        for (int i = 0; i &lt; str.length(); i++) {
+            char ch = str.charAt(i);
+    
+            if (ch == '&lt;') {
+                stack.push(ch);
+            } else if (ch == '&gt;') {
+                // Try to match a '&lt;' from the top
+                if (!stack.isEmpty() &amp;&amp; (char)stack.peek() == '&lt;') {
+                    stack.pop();
+                    count++;
+                }
+            }
+        
+        }
+    
+        return count;
+</font>    }
+
+//Assignment 3
+    public static String removeConsecDups(String word) {
+        if (word == null || word.length() &lt;= 1) {
+            return word;
+        }
+
+<a name="3"></a><font color="#00FFFF"><a href="match87-0.html#3" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_3_10.gif"/></a>
+
+        LinkedListQueue q = new LinkedListQueue();
+        for (int i = 0; i &lt; word.length(); i++) {
+            q.enqueue(word.charAt(i));
+        }
+
+        String result = "";
+</font><a name="1"></a><font color="#00FF00"><a href="match87-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_14.gif"/></a>
+
+        char prev = (char) q.dequeue();
+        result += prev;
+
+        while (!q.isEmpty()) {
+            char current = (char) q.dequeue();
+            if (current != prev) {
+                result += current;
+                prev = current;
+</font>            }
+        }
+
+        return result;
+    }</pre>
+</body>
+</html>

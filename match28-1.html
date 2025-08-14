@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>A4_Sec02_23201103_LAMIA-MEHRIN.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec14_24101618_Ram-Narayan-Bachhar-Ayosh.txt<p></p><pre>
+﻿Assignment no.1:
+
+
+
+
+    private int hashFunction( Integer key ){
+        return (key + 3) % ht.length;
+    }
+    public void remove( Integer key ){
+       
+        int n = hashFunction(key);
+        PairNode curr = ht[n];
+        PairNode prev = null;
+       
+<a name="2"></a><font color="#0000FF"><a href="match28-0.html#2" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_16.gif"/></a>
+
+        while(curr != null){
+        if(curr.key.equals(key)){
+            if(prev == null){
+                ht[n] = curr.next;
+                }
+                else{
+                    prev.next = curr.next;
+                }
+                return;
+            }
+            prev = curr;
+            curr = curr.next;
+</font>        }
+    }
+
+
+
+
+
+
+
+
+Assignment no.2:
+
+
+
+
+<a name="1"></a><font color="#00FF00"><a href="match28-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_26.gif"/></a>
+
+   public static int diamondCount(Stack stack, String str) {
+       
+        int count = 0;
+        for(int i=0;i&lt;str.length();i++){
+            char ch = str.charAt(i);
+            if(ch == '&lt;'){
+                stack.push(ch);
+            }
+            else if(ch == '&gt;'){
+                if(!stack.isEmpty() &amp;&amp; stack.peek().equals('&lt;')){
+                        stack.pop();
+                        count++;
+                }
+            }
+        }
+        return count;
+</font>    }
+
+
+
+
+
+
+Assignment no.3: 
+
+
+
+
+<a name="0"></a><font color="#FF0000"><a href="match28-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_31.gif"/></a>
+
+   public static String removeConsecDups(String word){
+       
+        LinkedListQueue queue = new LinkedListQueue();
+        for(int i=0;i&lt;word.length();i++){
+            queue.enqueue(word.charAt(i));
+        }
+        String result = "";
+        if(!queue.isEmpty()){
+            char prev = (char) queue.dequeue();
+            result += prev;
+            while(!queue.isEmpty()){
+                char current = (char) queue.dequeue();
+                if(current != prev){
+                    result += current;
+                    prev = current;
+</font>                }
+            }
+        }
+        return result;
+    }</pre>
+</body>
+</html>

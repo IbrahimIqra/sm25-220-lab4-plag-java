@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>A4_Sec25_24110011_Nure-Alam-Siddiquee-Zisan.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec25_24110011_Nure-Alam-Siddiquee-Zisan.txt<p></p><pre>
+#Task1
+<a name="0"></a><font color="#FF0000"><a href="match160-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_35.gif"/></a>
+
+ private int hashFunction( Integer key ){
+        return (key+3)%ht.length; //we mod with the length of the given array
+    }
+    public void remove( Integer key ){
+        int n=hashFunction(key);   
+        if(ht[n].key==key) {
+        	ht[n]=ht[n].next;
+        	return;
+        }
+        PairNode current=ht[n];
+        while(current.next!=null) {
+        	if(current.next.key==key) {
+        		current.next=current.next.next;
+        		return;
+        	}
+        	current=current.next;       	
+</font>        }
+    }
+
+
+#Task2
+ int cnt=0;
+       int n = str.length();
+<a name="1"></a><font color="#00FF00"><a href="match160-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_16.gif"/></a>
+
+        for(int i=0;i&lt;n;i++) {
+        	char c = str.charAt(i);
+        	if(c =='&lt;') {      //the problem is more like balanced parenthesis so when we got open parenthesis we push to the stack
+        		stack.push(c);
+        	}
+        	if(c=='&gt;') {
+        		if(!stack.isEmpty()) {
+        			stack.pop(); //after we getting the closing one then we pop it and count will be ++
+        			cnt++;
+        		}
+        	}
+        }
+        return cnt;
+</font>
+
+#Task 3
+
+LinkedListQueue LQ=new LinkedListQueue();
+    	char old=' ';
+        int n = word.length();
+<a name="2"></a><font color="#0000FF"><a href="match160-1.html#2" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_16.gif"/></a>
+
+    	for(int i=0;i&lt;n;i++) {
+    		char current=word.charAt(i);
+    		if (i==0 || current!=old) {   //this condition will check weather the character is same or not and if it is at 1st index it will and to the queue
+    	            LQ.enqueue(current);
+    	            old=current;
+    	    }    	
+    	}
+    	String newq="";
+    	while(!LQ.isEmpty()) {
+    		newq+=LQ.dequeue();
+</font>    	}
+    	return newq;
+}</pre>
+</body>
+</html>

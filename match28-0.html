@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>A4_Sec02_23201103_LAMIA-MEHRIN.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec02_23201103_LAMIA-MEHRIN.txt<p></p><pre>
+A4_02_23201103_Lamia_Mehrin
+
+ASSIGNMENT 01
+private int hashFunction( Integer key ){
+        return (key+3) % 6;
+}
+public void remove( Integer key ){
+        int x=hashFunction(key);
+        PairNode pred=null;
+        PairNode remNode=ht[x]; // eita ami remove korbo
+        
+<a name="2"></a><font color="#0000FF"><a href="match28-1.html#2" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_17.gif"/></a>
+
+        while(remNode!=null){
+            if(remNode.key.equals(key)){
+                if(pred==null){ // matha khali jodi hoi means LL er first e asi
+                    ht[x]=remNode.next; // head ta akhon remNode er porer node ke dhortese 
+                }
+                else{
+                    pred.next=remNode.next; // eikahane ami remNode taake skip korlam
+                }
+                return;
+            }
+            pred=remNode; // remNode e pred pointer ke update korlam
+            remNode=remNode.next; // rem keo update korlam
+</font>        }
+}
+
+
+ASSIGNMENT 02
+<a name="1"></a><font color="#00FF00"><a href="match28-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_27.gif"/></a>
+
+public static int diamondCount(Stack stack, String str){    
+    int D_count = 0;
+    for (int i= 0; i&lt;str.length(); i++) {
+        char ch=str.charAt(i);
+        if (ch=='&lt;'){
+            stack.push(ch);
+        } 
+        else if(ch=='&gt;'){
+            if(!stack.isEmpty() &amp;&amp; stack.peek().equals('&lt;')){ // khali and opore peek kore dekhbo je matching bracket ase or nai
+                stack.pop(); // jodi pai match tahole pop korbo
+                D_count++; // akta diamond paisi so increment
+            }
+        }
+    }
+    return D_count;
+</font>}
+
+
+
+
+
+
+ASSIGNMENT 03
+<a name="0"></a><font color="#FF0000"><a href="match28-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_32.gif"/></a>
+
+public static String removeConsecDups(String word){ 
+    LinkedListQueue queue =new LinkedListQueue(); 
+    for(int i=0; i&lt;word.length(); i++){
+            queue.enqueue(word.charAt(i));
+        }
+    String result ="";
+    if(!queue.isEmpty()){ // jodi na khali thake
+        char previous=(char)queue.dequeue();
+        result+=previous;
+        while(!queue.isEmpty()){
+            char current=(char)queue.dequeue();
+            if(current!=previous){
+                result+=current;
+                previous=current;
+</font>            }
+        }
+    }
+    return result;
+
+    }
+</pre>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>A4_Sec14_23201118_Abir-Enam.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec14_23201256_Emon.txt<p></p><pre>
+//task1
+<a name="0"></a><font color="#FF0000"><a href="match3-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_60.gif"/></a>
+
+private int hashFunction( Integer key ){
+        
+        return(key+3)%ht.length;
+
+        
+    }
+
+
+	
+    public void remove( Integer key ){
+        
+        int idx = hashFunction(key);
+
+        PairNode cur=ht[idx];
+        PairNode prev=null;
+
+        while (cur!= null){
+            if (cur.key.equals(key)){
+                if(prev ==null) {
+                    
+                    ht[idx]= cur.next;
+                } else{
+                    prev.next= cur.next;
+                }
+                return; 
+            }
+            prev =cur;
+            cur= cur.next;
+        }
+    }
+
+
+//task2
+public static int diamondCount(Stack stack, String str) {
+        
+        int dia= 0;
+
+        for (int i =0; i&lt;str.length();i++){
+            char ch=str.charAt(i);
+
+            if (ch == '&lt;') {
+                stack.push('&lt;');
+            } else if(ch=='&gt;') {
+                if (!stack.isEmpty()) {
+</font><a name="1"></a><font color="#00FF00"><a href="match3-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_35.gif"/></a>
+
+                    stack.pop();
+                    dia++;
+                }
+            }
+        }
+
+        return dia;
+
+   
+    }
+    
+//task3
+public static String removeConsecDups(String word){
+
+        LinkedListQueue queue=new LinkedListQueue();
+
+        for (int i =0; i&lt;word.length();i++) {
+            queue.enqueue(word.charAt(i));
+        }
+
+        String result="";
+        Character prev =null;
+
+        while (!queue.isEmpty()){
+            char cur=(char)queue.dequeue();
+
+            if (prev==null||cur!=prev) {
+                result+=cur; 
+                prev =cur;
+</font>            }
+        }
+
+        return result;
+	
+    }
+</pre>
+</body>
+</html>

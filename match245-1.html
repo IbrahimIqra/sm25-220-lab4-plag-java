@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>A4_Sec14_24101128_Dewan-Sifat-Rahman---DEWAN-SIFAT-RAHMAN.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec20_23301677_Nowrin-Tanhiad.txt<p></p><pre>
+//Asssignment1
+public class PairNode{
+Integer key;
+String value;
+PairNode next;
+public PairNode(Integer k, String v){
+this.key=k;
+this.value=v;
+this.next=next;
+}
+}
+
+<a name="0"></a><font color="#FF0000"><a href="match245-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_46.gif"/></a>
+
+private int hashFunction(Integer key){
+return(key+3)%ht.length;
+}
+public void remove (Integer key){
+int num=hashFunction(key);
+PairNode rec=ht[num];
+PairNode prev=null;
+
+while(rec!=null){
+if(rec.key.eqauls(key){
+ if(prev==null){
+ht[id]=rec.next;
+}
+else{
+prev.next=rec.next;
+}
+break;
+}
+prev=rec;
+rec=rec.next;
+}
+}
+
+
+//Assignment2
+Public static int diamondCount(Stack stack, String str){
+int c=0;
+for(int i=0; i&lt;str.length();i++){
+char ch = str.charAt(i);
+if(ch=='&lt;'){
+ stack.push(ch);
+}
+else if(ch=='&gt;'){
+</font>if(!stack.isEmpty()){
+Object p= stack.peek();
+if((char)p=='&lt;'){
+stack.pop();
+c++;
+}
+
+
+}
+}
+}
+return c;
+}
+
+
+
+//Assignments3
+public class RemoveConsecutiveDuplicates{
+public static String removeConsecDups(String word) {
+<a name="1"></a><font color="#00FF00"><a href="match245-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_8.gif"/></a>
+
+for(int i=0; i&lt;word.length();i++){
+queue.enqueue(word.charAt(i));
+}
+if(queue.isEmpty(){
+</font>return"";
+}
+char prev=(char)queue.denqueue();
+String sum=" "+prev;
+
+while(!queue.isEmpty()){
+char rec=(char)queue.dequeue();
+if(rec!=prev){
+sum=sum+rec;
+prev=rec;
+}
+}
+return sum;
+}
+
+
+
+
+}
+</pre>
+</body>
+</html>

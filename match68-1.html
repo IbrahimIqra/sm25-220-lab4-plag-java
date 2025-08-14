@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>A4_SEC26_24301347_MD-ASHIQUR-RAHMAN-ANKAN---MD-ASHIQUR-RAHMAN-ANKAN.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec14_24101620_Md.-Farden-Alam---MD.-FARDEN-ALAM.txt<p></p><pre>
+//Assignment_04
+//ID:24101620
+
+//Task_01==========================================&gt;
+
+private int hashFunction( Integer key ){
+        // TO DO
+        int sun = ((key + 3) % 6);
+<a name="2"></a><font color="#0000FF"><a href="match68-0.html#2" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_9.gif"/></a>
+
+        return sun;
+
+
+      //  return -1; //remove this line
+    }
+
+
+    public void remove( Integer key ){
+    int tell = hashFunction(key);
+    PairNode n = ht[tell];
+    PairNode newNode = null;
+</font>
+    for (;n != null;) {
+<a name="1"></a><font color="#00FF00"><a href="match68-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_19.gif"/></a>
+
+        if (n.key.equals(key)) {
+            if (newNode == null) {
+                ht[tell] = n.next;
+            } else {
+                newNode.next = n.next;
+            }
+            return;
+        }
+        newNode = n;
+        n = n.next;
+    }
+}
+}
+
+
+
+//Task_2====================================&gt;
+
+    public static int diamondCount(Stack stack, String str) {
+        // To Do
+    int sum = 0;
+</font>    int a;
+    char j;
+     for (a = 0; a &lt; str.length(); a++) {
+<a name="0"></a><font color="#FF0000"><a href="match68-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_39.gif"/></a>
+
+        j = str.charAt(a);
+
+        if (j == '&lt;') {
+            stack.push(j);
+        }
+         else if (j == '&gt;') {
+            if (!stack.isEmpty()){
+                if((char) stack.peek() == '&lt;') {
+                stack.pop();
+                sum++;
+            }
+        }
+    }
+}
+    return sum;
+
+      //  return -1; // Delete this line
+        }
+        
+        
+//Task_03=====================================&gt;
+
+    public static String removeConsecDups(String word){
+	// TODO
+
+    LinkedListQueue Object = new LinkedListQueue();
+    for (int a = 0; a &lt; word.length(); a++) {
+        Object.enqueue(word.charAt(a));
+    }
+
+    String adding = "";
+
+    if (!Object.isEmpty()) {
+        char at = (char) Object.dequeue();
+        adding += at;
+</font>
+        for (;!Object.isEmpty();) {
+            char current = (char) Object.dequeue();
+            if (current != at) {
+                adding += current;
+                at = current;
+            }
+        }
+    }
+    return adding;
+}
+
+</pre>
+</body>
+</html>

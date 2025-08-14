@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>A4_Sec14_24101153_Mahruf-Al-Mahi.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec14_24101153_Mahruf-Al-Mahi.txt<p></p><pre>
+public void remove( Integer key ){
+        // TO DO 
+
+        int index = hashFunction(key);
+        if(this.ht[index] == null) return;
+
+        if(this.ht[index].key.equals(key)){
+
+            this.ht[index] = this.ht[index].next;
+            return;
+        }
+        
+
+        PairNode currnode = this.ht[index];
+        
+
+        while( currnode.next != null &amp;&amp; !currnode.next.key.equals(key)){
+
+            currnode = currnode.next;
+
+        }
+        if (currnode.next != null) {
+        currnode.next = currnode.next.next;
+    }
+
+       
+
+    }
+
+
+
+<a name="1"></a><font color="#00FF00"><a href="match264-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_27.gif"/></a>
+
+public static int diamondCount(Stack stack, String str) {
+        // To Do
+
+        int dcount = 0;
+
+        for(int i = 0; i &lt; str.length(); i++){
+
+            char ch = str.charAt(i);
+
+            if(ch == '&lt;'){
+
+                stack.push(ch);
+            }else if(ch == '&gt;'){
+
+                if(!stack.isEmpty() &amp;&amp; (char)stack.peek() == '&lt;'){
+
+                    stack.pop();
+                    dcount ++;
+                }
+            }
+        }
+
+        return dcount; // Delete this line
+</font>    }
+
+
+
+<a name="0"></a><font color="#FF0000"><a href="match264-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_31.gif"/></a>
+
+public static String removeConsecDups(String word){
+    LinkedListQueue llq = new LinkedListQueue();
+
+    // Enqueue all characters
+    for (int i = 0; i &lt; word.length(); i++) {
+        llq.enqueue(word.charAt(i));
+    }
+
+    // Prepare result string
+    String output = "";
+
+    if (!llq.isEmpty()) {
+        char dx = (char) llq.dequeue();
+        output += dx;
+
+        while (!llq.isEmpty()) {
+            char curr = (char) llq.dequeue();
+
+            if (curr != dx) {
+                output += curr;
+                dx = curr;
+</font>            }
+        }
+    }
+
+    return output;
+}</pre>
+</body>
+</html>

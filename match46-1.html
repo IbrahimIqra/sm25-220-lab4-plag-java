@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>A4_Sec22_24101213_Fariha-Ahsan.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec06_24301146_Lubaiyana-Afroze-Khan---LUBAIYANA-AFROZE-KHAN.txt<p></p><pre>
+//Assignment1
+
+
+ private int hashFunction( Integer key ){
+
+<a name="0"></a><font color="#FF0000"><a href="match46-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_44.gif"/></a>
+
+      return (key + 3) % ht.length;
+    }
+
+
+    public void remove( Integer key ){
+    int ind = hashFunction(key);
+    PairNode current = ht[ind];
+    PairNode prev = null;
+
+    while(current != null){
+        if(current.key.equals(key)){
+            if(prev == null){
+                ht[ind] = current.next; 
+            } 
+            else {
+                prev.next = current.next; 
+            }
+            return;
+        }
+        prev = current;
+        current = current.next;
+  
+    }
+
+}
+
+
+//Assignment2
+
+
+public static int diamondCount(Stack stack, String str) {
+        int count = 0;
+
+        for (int i = 0; i &lt; str.length(); i++) {
+            char ch = str.charAt(i);
+</font>
+            if (ch == '&lt;') {
+                stack.push(ch); // Push as Character, not Integer
+            } 
+            else if (ch == '&gt;') {
+                if (!stack.isEmpty()) {
+                    Object topObj = stack.peek();
+
+                    if ((Character) topObj == '&lt;') {
+<a name="1"></a><font color="#00FF00"><a href="match46-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_32.gif"/></a>
+
+                        stack.pop();
+                        count++;
+                    }
+                }
+            }
+        }
+
+        return count;
+    }
+
+
+
+//Assignment3
+
+
+
+    public static String removeConsecDups(String word){
+
+    LinkedListQueue newQ = new LinkedListQueue();
+    
+
+    for (int i = 0; i &lt; word.length(); i++) {
+        newQ.enqueue(word.charAt(i));
+    }
+
+    String result = " ";
+    char prev = ' '; 
+    
+    while (!newQ.isEmpty()) {
+        char current = (char) newQ.dequeue();
+        if (current != prev) {
+            result += current;
+            prev = current;
+</font>        }
+    }
+    
+    return result;
+}</pre>
+</body>
+</html>

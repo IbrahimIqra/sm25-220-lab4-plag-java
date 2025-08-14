@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>A4_Sec11_24341283_Md-Sakib-Hasan-.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec11_24341283_Md-Sakib-Hasan-.txt<p></p><pre>
+<a name="0"></a><font color="#FF0000"><a href="match1-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_75.gif"/></a>
+
+﻿Task 1 
+
+
+private int hashFunction(Integer k) {
+    return (k + 3) % 6;
+}
+
+
+
+
+public void remove(Integer k) {
+    int idx = hashFunction(k);
+    if (ht[idx] == null) {
+        return; 
+    }
+    
+    PairNode curr = ht[idx];
+    PairNode prev = null;
+    
+    if (curr != null &amp;&amp; curr.key.equals(k)) {
+        ht[idx] = curr.next;
+        return;
+    }
+    
+    while (curr != null &amp;&amp; !curr.key.equals(k)) {
+        prev = curr;
+        curr = curr.next;
+    }
+    
+    if (curr == null) {
+        return;
+    }
+    prev.next = curr.next;
+}
+
+
+
+
+
+
+Task 2
+
+
+
+
+public static int diamondCount(Stack s, String str) {
+    int cnt = 0;
+    
+    for(int i = 0; i &lt; str.length(); i++) 
+{
+        char c = str.charAt(i);
+        
+        if(c == '.')
+ {
+            continue;
+        }
+        if(c == '&lt;')
+ {
+            s.push(c);
+        }
+        else if(c == '&gt;')
+ {
+            if(!s.isEmpty() &amp;&amp; (Character)s.peek() == '&lt;') {
+                s.pop();
+                cnt++;
+            }
+        }
+    }
+    return cnt;
+}
+
+
+
+
+
+
+
+
+Task 3
+
+
+
+
+public static String removeConsecDups(String input) {
+    LinkedListQueue queue = new LinkedListQueue();
+</font>     
+<a name="1"></a><font color="#00FF00"><a href="match1-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_11.gif"/></a>
+
+    for(int i = 0; i &lt; input.length(); i++) {
+        char currentChar = input.charAt(i);
+        
+        if(queue.isEmpty()) {
+            queue.enqueue(currentChar);
+</font>        }
+        else if(currentChar != (Character)queue.peek()) {
+            queue.enqueue(currentChar);
+        }
+    }
+    
+    String result = "";
+    while(!queue.isEmpty()) {
+        result += queue.dequeue();        
+    }
+    return result;
+}</pre>
+</body>
+</html>

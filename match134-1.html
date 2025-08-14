@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>A4_Sec09_24126136_Md.-Zarif-Muntakim---MD.-ZARIF-MUNTAKIM.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec14_24241097_Sajidul-karim.txt<p></p><pre>
+//task01
+<a name="0"></a><font color="#FF0000"><a href="match134-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_41.gif"/></a>
+
+ private int hashFunction( Integer key ){
+        if (key == null) return -1;
+        return (key + 3) % 6;
+}
+
+  public void remove(Integer key){
+    int index = hashFunction(key);
+    if (index == -1 || ht[index] == null) {
+        return;
+    }
+    PairNode temp = ht[index];
+    PairNode prev = null;
+    while (temp != null) {
+        if (temp.key.equals(key)) {
+            if (prev == null) {
+                ht[index] = temp.next;
+            } else {
+                prev.next = temp.next;
+            }
+            return;
+        }
+        prev = temp;
+        temp = temp.next;
+</font>  }
+}
+
+//task02
+<a name="1"></a><font color="#00FF00"><a href="match134-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_24.gif"/></a>
+
+  public static int diamondCount(Stack stack, String str) {
+      int diamondCount = 0;
+      for(int i =0;i&lt; str.length(); i++) {
+          char ch = str.charAt(i);
+          if (ch == '&lt;') {
+              stack.push(ch);
+          } else if (ch == '&gt;') {
+              if (!stack.isEmpty())  {
+                  stack.pop();
+                  diamondCount++;
+              }
+          }
+      }
+      return diamondCount;
+</font>    }
+//task04
+public static String removeConsecDups(String word){
+        LinkedListQueue queue = new LinkedListQueue();
+        char lastChar = 0; 
+        for (int i = 0; i &lt; word.length(); i++) {
+            char currentChar = word.charAt(i);
+         if (i == 0 || currentChar != lastChar) {
+            queue.enqueue(currentChar);
+            lastChar = currentChar;
+        }
+        }
+    String result = "";
+    while (!queue.isEmpty()) {
+    result += queue.dequeue();
+    }
+    return result;
+}</pre>
+</body>
+</html>

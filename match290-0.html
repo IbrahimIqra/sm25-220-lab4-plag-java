@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>A4_Sec16_24101254_Sumaiya-Jahan.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec16_24101254_Sumaiya-Jahan.txt<p></p><pre>
+//Assignment Task1
+
+<a name="1"></a><font color="#00FF00"><a href="match290-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_10.gif"/></a>
+
+  private int hashFunction( Integer key ){
+        return (key+3)%ht.length;
+    }
+
+    public void remove( Integer key ){
+        int idx=hashFunction(key);
+    PairNode currNode=ht[idx];
+</font><a name="2"></a><font color="#0000FF"><a href="match290-1.html#2" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_10.gif"/></a>
+
+    PairNode prevNode=null;
+
+    while(currNode!=null){
+        if(currNode.key==key){
+            if (prevNode==null){
+                ht[idx]=currNode.next;
+</font>                return;
+<a name="0"></a><font color="#FF0000"><a href="match290-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_41.gif"/></a>
+
+            }else{
+                prevNode.next=currNode.next;
+                return;
+            }
+        }
+        prevNode=currNode;
+        currNode=currNode.next;
+    }
+}
+}
+//Assignment Task2
+
+ public static int diamondCount(Stack stack, String str) {
+         int count=0;
+        for(int i=0; i&lt;str.length(); i++){
+        char c=str.charAt(i);
+
+        if(c=='&lt;'){
+            stack.push(c);
+        }else if(c=='&gt;'){
+            if(!stack.isEmpty() &amp;&amp; (char)stack.peek()=='&lt;') {
+                stack.pop();
+                count++;
+            }
+        }
+    }
+   return count;
+ }
+
+//Assignment Task3
+
+ public static String removeConsecDups(String word){
+    LinkedListQueue queue=new LinkedListQueue();
+</font>    String s1="";
+    for(int i=0;i&lt;word.length();i++){
+        queue.enqueue(word.charAt(i));
+    }
+    char firstCh=(char)queue.dequeue();
+    s1+=firstCh;
+    while(!queue.isEmpty()){
+        char temp=(char)queue.dequeue();
+        if(temp!=firstCh) {
+            s1+=temp;
+            firstCh=temp;
+        }else{
+            continue;
+       }
+    }
+   return s1;
+ }
+</pre>
+</body>
+</html>

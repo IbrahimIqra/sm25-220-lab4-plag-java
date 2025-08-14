@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>A4_Sec06_24301555_Tanvir-Pervez-Choyon---TANVIR-PERVEZ-CHOYON.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec18_24101594_Tasriful-Nabil---TASRIFUL-NABIL.txt<p></p><pre>
+assgn1
+
+public void remove(Integer key) {
+    int location = hashFunction(key);
+    PairNode current = ht[location];
+
+<a name="1"></a><font color="#00FF00"><a href="match238-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_18.gif"/></a>
+
+    if (current != null &amp;&amp; current.key.equals(key)) {
+        ht[location] = current.next;
+        return;
+    }
+
+    while (current.next!= null) {
+        if (current.next.key.equals(key)) {
+            current.next = current.next.next;
+            return;
+        }
+        current = current.next;
+</font>    }
+}
+}
+
+Assgn 2
+
+
+
+<a name="2"></a><font color="#0000FF"><a href="match238-0.html#2" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_12.gif"/></a>
+
+public static int diamondCount(Stack stack, String str) {
+        
+    int count = 0;
+    for (int k = 0; k &lt; str.length(); k++) {
+        char ch = str.charAt(k);
+</font>        if (ch == '&lt;') {
+            stack.push(ch);
+        } else if (ch == '&gt;') {
+            if (!stack.isEmpty() &amp;&amp; (char) stack.peek() == '&lt;') {
+                stack.pop();
+                count++;
+            }
+        }
+    
+    }
+    return count;
+
+
+    }
+
+
+assgn 3
+
+
+
+<a name="0"></a><font color="#FF0000"><a href="match238-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_33.gif"/></a>
+
+public static String removeConsecDups(String word) {
+    
+    LinkedListQueue q = new LinkedListQueue();
+
+    
+    for (int j = 0; j &lt; word.length(); j++) {
+        q.enqueue(word.charAt(j));
+    }
+
+    
+    String f = "";
+    if (!q.isEmpty()) {
+        char pre= (char) q.dequeue();
+        f += pre;
+
+        while (!q.isEmpty()) {
+            char curr = (char) q.dequeue();
+            if (curr != pre) {
+                f += curr;
+                pre = curr;
+</font>            }
+        }
+    }
+
+    return f;
+}
+
+</pre>
+</body>
+</html>

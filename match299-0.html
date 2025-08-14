@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>A4_Sec15_24141060_Adiyat-Shaik---ADIYAT-SHAIK.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec15_24141060_Adiyat-Shaik---ADIYAT-SHAIK.txt<p></p><pre>
+//Task1
+private int hashFunction( Integer key ){
+        return (key + 3) % 6; //remove this line
+    }
+
+public void remove(Integer key ){
+        int i = hashFunction(key);
+        PairNode current = ht[i];
+        PairNode previous = null;
+
+        while (current != null) {
+            if(current.key.equals(key)){
+                if(previous == null){
+                    ht[i] = current.next;
+                }
+                else{
+<a name="0"></a><font color="#FF0000"><a href="match299-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_40.gif"/></a>
+
+                    previous.next = current.next;
+                }
+                return;
+            }
+            previous = current;
+            current = current.next;
+        }
+    }
+
+//Task2
+public static int diamondCount(Stack stack, String str) {
+        int total = 0;
+
+        for(int i = 0; i &lt; str.length(); i ++){
+            char ch = str.charAt(i);
+
+            if(ch == '&lt;'){
+                stack.push(ch);
+            }
+            else if(ch == '&gt;'){
+                if(!stack.isEmpty() &amp;&amp; (char)stack.peek() == '&lt;'){
+                    stack.pop();
+                    total++;
+                }
+            }
+        }
+        return total;
+    }
+
+//Task3
+public static String removeConsecDups(String word){ 
+        if(word.length() == 0){
+</font><a name="2"></a><font color="#0000FF"><a href="match299-1.html#2" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_10.gif"/></a>
+
+            return "";
+        }
+        LinkedListQueue q = new LinkedListQueue();
+
+        for(int i = 0; i &lt; word.length(); i++){
+            q.enqueue(word.charAt(i));
+</font>        }
+
+        char previous = (char)q.dequeue();
+<a name="1"></a><font color="#00FF00"><a href="match299-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_10.gif"/></a>
+
+        String result = "" + previous;
+
+        while(!q.isEmpty()){
+            char current = (char) q.dequeue();
+            if(current != previous){
+                result += current;
+                previous = current;
+</font>            }
+        }
+	    return result;
+    }</pre>
+</body>
+</html>

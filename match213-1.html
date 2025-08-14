@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>A4_Sec01_24201459_Mohammad-Sajidul-Karim.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec10_24301467_Auria-Rahman---AURIA-RAHMAN.txt<p></p><pre>
+//TASK01
+
+ private int hashFunction( Integer key ){
+        if(key==null){
+            return -1;
+        }
+        return (key+3)%6;
+    }
+
+ public void remove( Integer key ){
+        if(key==null){
+            return;
+        }
+        int idx=hashFunction(key);
+        if(idx==-1){
+<a name="0"></a><font color="#FF0000"><a href="match213-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_39.gif"/></a>
+
+            return;
+        }
+        PairNode c=ht[idx];
+        PairNode prev=null;
+        while(c!=null){
+            if(c.key.equals(key)){
+                if(prev==null){
+                    ht[idx]=c.next;
+                }
+                else{
+                    prev.next=c.next;
+                }
+                return;
+            }
+            prev=c;
+            c=c.next;
+        }
+    }
+}
+
+
+//TASK02
+
+public static int diamondCount(Stack stack, String str) {
+        int count=0;
+        for(int i=0;i&lt;str.length();i++){
+            char c=str.charAt(i);
+            if(c=='&lt;'){
+                stack.push(c);
+            }
+            else if(c=='&gt;'){
+                if(!stack.isEmpty()&amp;&amp;stack.peek().equals('&lt;')){
+</font>                    stack.pop();
+                    count++;
+                }
+            }
+        }
+        return count; 
+    }
+
+
+//TASK03
+public static String removeConsecDups(String word){
+        if(word==null||word.isEmpty()){
+            return word;
+        }
+<a name="1"></a><font color="#00FF00"><a href="match213-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_15.gif"/></a>
+
+        LinkedListQueue q=new LinkedListQueue();
+        LinkedListQueue r=new LinkedListQueue();//result queue
+        for(int i=0;i&lt;word.length();i++){
+            char c=word.charAt(i);
+            if(q.isEmpty()){
+                q.enqueue(c);
+                r.enqueue(c);
+            }
+            else{
+</font>                if((char)q.peek()!=c){
+                    q.dequeue();
+                    q.enqueue(c);
+                    r.enqueue(c);
+                }
+            }
+        }
+        String result="";
+        while(!r.isEmpty()){
+            result+=r.dequeue();
+        }
+        return result;
+    }</pre>
+</body>
+</html>

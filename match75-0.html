@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>A4_Sec23_24301029_Abid-Hasan.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec23_24301029_Abid-Hasan.txt<p></p><pre>
+﻿//LL01
+public void remove( Integer key ){
+            int idx =hashFunction(key);
+             if (idx == -1|| ht [idx]==null){
+            return;
+        }
+          PairNode head = ht[idx];
+        if(key.equals(head.key)){
+<a name="2"></a><font color="#0000FF"><a href="match75-1.html#2" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_18.gif"/></a>
+
+            ht[idx]= head.next;
+            return;
+        }
+           PairNode prev = head;
+        PairNode curr = head.next;
+       while(curr!= null){
+       if(curr.key.equals(key)){
+                prev.next=curr.next;
+                return;
+            }
+            prev = curr;
+            curr = curr.next;
+</font>        }
+}
+private int hashFunction( Integer key ){
+        if (key == null){
+            return -1;
+        }
+        return (key+3)% ht.length;
+        }
+
+
+//LL2
+<a name="1"></a><font color="#00FF00"><a href="match75-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_18.gif"/></a>
+
+public static int diamondCount(Stack stack, String str) { 
+       int diamondCount =0;
+           for (int i =0 ; i&lt; str.length(); i++){
+           char ch = str.charAt(i);
+           if (ch == '&lt;'){
+               stack.push(ch);
+           }
+           else if (ch=='&gt;'){
+               if (!stack.isEmpty()){
+</font>                   stack.pop();
+                   diamondCount++;
+               }
+           }
+       }
+    return diamondCount; 
+    } 
+
+
+//LL3
+public static String removeConsecDups(String word){
+        if (word == null || word.length() == 0){
+            return "";
+        }
+<a name="0"></a><font color="#FF0000"><a href="match75-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_24.gif"/></a>
+
+          LinkedListQueue qu = new LinkedListQueue ();
+          char x = word.charAt(0);
+           qu.enqueue(x);
+           for(int i = 1; i&lt;word.length(); i++){
+            char y = word.charAt (i);
+            if (y != x){
+                qu.enqueue(y);
+                x=y;
+            }
+        }
+        String result ="";
+        while (!qu.isEmpty()){
+            result += qu.dequeue();
+</font>        }
+        return result;
+    }</pre>
+</body>
+</html>

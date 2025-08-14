@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>A4_Sec22_24101283_Maisha-Farzana-Haque---MAISHA-FARZANA-HAQUE.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec22_24101283_Maisha-Farzana-Haque---MAISHA-FARZANA-HAQUE.txt<p></p><pre>
+﻿//task1
+<a name="0"></a><font color="#FF0000"><a href="match242-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_56.gif"/></a>
+
+private int hashFunction(Integer m){
+  return (m+3)%ht.length;
+}
+
+
+public void remove(Integer m){
+  int px=hashFunction(m);
+  PairNode r1=ht[px];
+  PairNode pv=null;
+  while(r1!=null){
+    if(r1.key==m){
+      if(pv==null){
+        ht[px]=r1.next;
+      }
+      else{
+        pv.next=r1.next;
+      }
+      return;
+    }
+    pv=r1;
+    r1=r1.next;
+    
+  }
+}
+
+
+
+
+//task2
+public static int diamondCount(Stack s,String r){
+  int trk=0;
+  for (int i=0;i&lt;r.length();i++){
+    char m=r.charAt(i);
+    if(m=='&lt;'){
+      s.push(m);
+    }
+    else if(m=='&gt;'){
+</font>      if(!s.isEmpty()&amp;&amp;(char)s.peek()=='&lt;'){
+        s.pop();
+        tk++;
+      }
+    }
+    else if(m=='.'){
+      continue;
+    }
+    else{
+      continue;
+    }
+  }
+  return trk; 
+}
+
+
+//task3
+public static String removeConsecDups(String w){
+  Queue qq=new Queue();
+  String st="";
+<a name="1"></a><font color="#00FF00"><a href="match242-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_10.gif"/></a>
+
+  for(int i=0;i&lt;w.length();i++){
+    qq.enQueue(w.charAt(i));
+    if(q.isEmpty()){
+</font>      return;
+    }
+    if(!qq.isEmpty()){
+      char curr=(char)qq.deQueue();</pre>
+</body>
+</html>

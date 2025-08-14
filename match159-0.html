@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>A4_Sec02_24201160_Tashfia-Shahrin---TASHFIA-SHAHRIN.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec02_24201160_Tashfia-Shahrin---TASHFIA-SHAHRIN.txt<p></p><pre>
+//Task 01
+public class HashTable {
+  private int hashFunction( Integer key ){
+    int htkey = (key+3)%ht.length;
+<a name="1"></a><font color="#00FF00"><a href="match159-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_17.gif"/></a>
+
+    return htkey;
+  }
+  public void remove( Integer key ){
+    int hashIndex = hashFunction(key);
+    PairNode oldNode = ht[hashIndex];
+    PairNode newNode = null;
+    while(oldNode!=null){
+      if(oldNode.key.equals(key)){
+        if(newNode==null){
+          ht[hashIndex] = oldNode.next;
+</font>        }
+        else{
+          PairNode nextNode = oldNode.next;
+          newNode.next = nextNode;
+        }
+        return;
+      }
+      newNode = oldNode;
+      oldNode = oldNode.next;
+    }
+  }
+}
+
+//Task 02
+public class StackAssgnTaskTester {
+<a name="2"></a><font color="#0000FF"><a href="match159-1.html#2" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_12.gif"/></a>
+
+  public static int diamondCount(Stack stack, String str) {
+    int diamondCount = 0;
+    for(int i = 0;i&lt;str.length();i++){
+      char oldChar = str.charAt(i);
+</font>      if(oldChar=='&lt;'){
+        stack.push(oldChar);
+      }
+      else if(oldChar=='&gt;'){
+        if(!stack.isEmpty()){
+          char newChar = (char)stack.pop();
+          if(newChar=='&lt;'&amp;&amp;oldChar=='&gt;'){
+            diamondCount++;
+          }
+        }
+      }
+    }
+    return diamondCount;
+  }
+}
+
+//Task 03
+public class RemoveConsecutiveDuplicates{
+<a name="0"></a><font color="#FF0000"><a href="match159-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_30.gif"/></a>
+
+  public static String removeConsecDups(String word){
+    LinkedListQueue string = new LinkedListQueue();
+    for(int i = 0; i&lt;word.length();i++){
+      string.enqueue(word.charAt(i));
+    }
+    String res = "";
+    if(!string.isEmpty()){
+      char oldChar = (char)string.dequeue();
+      res = res + oldChar;
+      while(!string.isEmpty()){
+        char newChar = (char)string.dequeue();
+        if(newChar!=oldChar){
+          res = res + newChar;
+          oldChar = newChar;
+</font>        }
+      }
+    }
+    return res;
+  }
+}</pre>
+</body>
+</html>

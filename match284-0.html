@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>A4_Sec22_24301294_Arnob-Debnath---ARNOB-DEBNATH.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec22_24301294_Arnob-Debnath---ARNOB-DEBNATH.txt<p></p><pre>
+//Task 01
+public PairNode( Integer k, String v ){
+        // TO DO
+      this.key=k;
+      this.value=v;
+      this.next=null;
+    }
+<a name="0"></a><font color="#FF0000"><a href="match284-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_28.gif"/></a>
+
+ private int hashFunction( Integer key ){
+   
+       return (key+3)%6;
+    }
+ public void remove( Integer key ){
+     int AD= hashFunction(key);// storing the index number
+     PairNode AT=ht[AD];// searching for node
+     PairNode AC=null;// storing previous node of AT
+     while(AT!=null){//while loop to interate though hashtable
+       if(AT.key.equals(key)){//condition to check if key if there
+         if(AC== null){//if key is in 1st node
+           ht[AD]=AT.next;//1st head removes
+         }
+         else{
+           AC.next=AT.next;//moddle or last head
+         }
+       }
+       AC=AT;//moves forward
+       AT=AT.next;//moves forward to search
+</font>     }
+    }
+
+//Task 02
+
+<a name="2"></a><font color="#0000FF"><a href="match284-1.html#2" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_10.gif"/></a>
+
+ public static int diamondCount(Stack stack, String str) {
+       int AK=0;//for counting the number of diamond
+       for(int AV=0;AV&lt;str.length();AV++){//for loop to iterate every single character of the string str
+         char AG =str.charAt(AV);//storing the AV number character into AG 
+</font>         if(AG=='&gt;'){//if condition to check '&gt;" 
+           if(!stack.isEmpty()){//2nd condition to check if the stack is empty
+             if((char)stack.peek()=='&lt;'){//3rd condition to check if the top is '&lt;'
+               stack.pop();//remove '&lt;'
+               AK++;//increment count
+             }
+           }
+         }
+         else if(AG=='&lt;'){// AG is '&lt;'
+             stack.push(AG);// then push it into stack so that later can be matched with '&gt;'
+           }
+         else{}
+        
+         }
+        return AK;//return count
+    }
+
+// Task 03
+
+<a name="1"></a><font color="#00FF00"><a href="match284-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_18.gif"/></a>
+
+public static String removeConsecDups(String word){
+      LinkedListQueue AD= new LinkedListQueue();// created new object
+      String AF="";// a variable for storing new string
+      for(int AG=0; AG&lt;word.length();AG++){// for loop to iterate thorugh every string character
+        AD.enqueue(word.charAt(AG));// adding the character to the queue
+      }
+      if(!AD.isEmpty()){//checking it the stack is empty
+        char AI=(char)AD.dequeue();//1st character out/dequeue
+        AF+=AI;//add it to string
+</font>        while(!AD.isEmpty()){//while loop for iterating rest characters
+          char AJ=(char)AD.dequeue();//2nd character out
+          if(AJ==AI){//checking weather 2nd and 1st characters are similar 
+          }
+          else{//if not
+            AF+=AJ;//storing 2nd character to AF
+            AI=AJ;//2nd/current character becomes 1st character
+          }
+        }
+      }
+      return AF;//return new string
+    }
+
+</pre>
+</body>
+</html>

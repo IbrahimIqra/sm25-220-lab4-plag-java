@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>A4_Sec07_23301481_MD.ANTAKI-MUNABBI-LABIB-AHMED.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec10_24101449_Sujoy-Chandra-Kundu---SUJOY-CHANDRA-KUNDU.txt<p></p><pre>
+Assignment01:
+
+public PairNode( Integer k, String v ){
+        // TO DO
+        this.key=k;
+        this.value=v;
+        this.next=null;
+
+    }
+
+
+<a name="0"></a><font color="#FF0000"><a href="match237-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_33.gif"/></a>
+
+private int hashFunction( Integer key ){
+        // TO DO
+        return (key+3)%6; //remove this line
+    }
+
+
+    //you need to COMPLETE this method and MUST SUBMIT IT
+    //before writing remove you should complete hashFunction
+    public void remove( Integer key ){
+        // TO DO
+        int a=hashFunction(key);
+        PairNode c=ht[a];
+        PairNode e=null;
+        while(c!=null){
+            if(c.key==key){
+                if(e==null){//to remove head of the list
+                    ht[a]=c.next;
+
+                }else{//to remove middle or last node
+                    e.next=c.next;
+
+                }
+                return;//stopping after removing
+            }
+            e=c;
+            c=c.next;
+</font>
+        }
+    }
+
+_______________________________________________
+
+Assignment02:
+
+<a name="1"></a><font color="#00FF00"><a href="match237-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_19.gif"/></a>
+
+public static int diamondCount(Stack stack, String str) {
+        // To Do
+        int c=0;
+        for(int i=0;i&lt;str.length();i++){
+            char ch=str.charAt(i);
+            if(ch=='&lt;'){
+                stack.push(ch);
+
+            }else if(ch=='&gt;'){
+</font>                Object a=stack.peek();//here will return null if empty
+                if(a!=null &amp;&amp; a.equals('&lt;')){
+                    stack.pop();//for matching diamond
+                    c++;
+
+                }
+            }
+            //here we don't need anything to do with (.)
+        }
+        return c; // Delete this line
+    }
+
+_______________________________________________
+
+Assignment03:
+
+<a name="2"></a><font color="#0000FF"><a href="match237-0.html#2" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_14.gif"/></a>
+
+public static String removeConsecDups(String word){
+        LinkedListQueue q=new LinkedListQueue();
+        for(int i=0;i&lt;word.length();i++){//now we have to enqueue all characters
+            q.enqueue(word.charAt(i));
+        }
+        StringBuilder result = new StringBuilder();//now remove consecutive duplicates
+</font>        if (){
+
+        }
+
+    }
+//can't do anymore
+
+________________________________________________</pre>
+</body>
+</html>

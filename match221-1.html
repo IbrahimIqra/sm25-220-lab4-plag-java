@@ -1,0 +1,146 @@
+<html>
+<head>
+<title>A4_Sec16_24101254_Sumaiya-Jahan.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec08_24301262_Mahmudul-Hasan-Jami-.txt<p></p><pre>
+//Task-01
+
+<a name="1"></a><font color="#00FF00"><a href="match221-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_14.gif"/></a>
+
+private int hashFunction( Integer key ){
+        
+        return (key + 3) % ht.length ; 
+        
+    }
+
+
+public void remove( Integer key ){
+        
+      int idx = hashFunction (key);
+      
+      PairNode temp = ht[idx];
+      
+      PairNode prev = null; 
+</font>      
+      if (temp == null){
+        
+        return;
+        
+      }
+      
+      while (temp != null){
+        
+        if(temp.key.equals(key)){
+          
+          if (prev == null){
+            
+            ht[idx] = temp.next;
+            
+            break;
+                      
+          }
+          
+          else {
+            
+            prev.next = temp.next;
+            
+            break;
+           
+          }
+          
+        }
+        
+        else {
+          
+<a name="0"></a><font color="#FF0000"><a href="match221-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_38.gif"/></a>
+
+          prev = temp;
+          
+          temp = temp.next;
+          
+        }
+        
+      }
+          
+    }
+
+
+//Task-02
+
+public static int diamondCount(Stack stack, String str) {
+        
+      int count = 0;
+      
+      for ( int i = 0; i &lt; str.length(); i++ ){
+        
+        char ch = str.charAt(i);
+        
+        if ( ch == '&lt;' ){
+          
+          stack.push(ch);
+          
+        }
+        
+        else if ( ch == '&gt;' ){
+          
+          if (!(stack.isEmpty())){
+            
+            if ((char)stack.peek() == '&lt;'){
+              
+              stack.pop();
+              
+              count++;
+              
+            }
+            
+          }
+          
+        }
+        
+      }
+      
+      return count;
+        
+    }
+
+//Task03
+
+public static String removeConsecDups(String word){
+ 
+      LinkedListQueue newQueue = new LinkedListQueue();
+      
+      String newWord = "";
+</font>      
+      char next = ' ';
+      
+      for (int i = 0; i &lt; word.length(); i++) {
+        
+        char ch = word.charAt(i);
+        
+<a name="2"></a><font color="#0000FF"><a href="match221-0.html#2" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_10.gif"/></a>
+
+        newQueue.enqueue(ch);
+        
+      }
+      
+      while (!(newQueue.isEmpty())){
+        
+        char temp = (char)newQueue.dequeue();
+        
+        if (temp != next){
+          
+          newWord += temp;
+          
+          next = temp;
+</font>          
+        }
+        
+      }
+      
+      return newWord;
+      
+    }</pre>
+</body>
+</html>

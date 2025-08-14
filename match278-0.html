@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>A4_Sec06_24301156_Tanzim-Ahmed.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec06_24301156_Tanzim-Ahmed.txt<p></p><pre>
+﻿//Task2
+<a name="0"></a><font color="#FF0000"><a href="match278-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_51.gif"/></a>
+
+public static int diamondCount(Stack stack, String str) {
+       // To Do
+       int count = 0;
+       for(int i = 0; i&lt;str.length(); i++){
+
+
+           char bit = str.charAt(i);
+          
+           if(bit == '&lt;'){
+
+
+               stack.push(bit);
+
+
+           }
+           else if(bit == '&gt;'){
+               if (!stack.isEmpty() &amp;&amp; (char)stack.peek()=='&lt;'){
+                   stack.pop();
+                   count++;
+               }
+           }
+       }
+
+
+
+
+       return count;
+   
+
+
+
+
+//Task3
+  
+  public static String removeConsecDups(String word){
+   // TODO
+   LinkedListQueue que = new LinkedListQueue();
+   String w = word;
+</font>
+<a name="1"></a><font color="#00FF00"><a href="match278-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_39.gif"/></a>
+
+
+   String newWord = "";
+
+
+   for(int i = 0 ;i &lt; w.length() ;i++){
+
+
+       que.enqueue(word.charAt(i));
+
+
+   }
+   if(!que.isEmpty()){
+
+
+
+
+       char c = (char)que.dequeue();
+
+
+       newWord += c;
+       while(!que.isEmpty()){
+
+
+           char n = (char)que.dequeue();
+
+
+
+
+           if(n != c ){
+
+
+
+
+              
+               newWord += n;
+
+
+               c = n;
+</font>           }
+       }
+   }
+  
+   return newWord;</pre>
+</body>
+</html>

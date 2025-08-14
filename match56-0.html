@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>A4_Sec25_24101452_Arifin-Ahamed-.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec25_24101452_Arifin-Ahamed-.txt<p></p><pre>
+task1#
+
+public class PairNode {
+
+    public Integer key;
+    public String value;
+    public PairNode next;
+
+    public PairNode(Integer key, String value) {
+        this.key = key ;
+        this.value = value ;
+        this.next = null ;
+    }
+}
+
+private int hashFunction(Integer key) {
+<a name="2"></a><font color="#0000FF"><a href="match56-1.html#2" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_18.gif"/></a>
+
+    return key% ht.length;
+}
+
+public void remove(Integer key)  {
+
+    int idx = hashFunction(key);
+    PairNode current = ht[idx];
+
+    PairNode prev = null;
+
+    while (current != null) {
+
+        if (current.key.equals(key)) {
+
+            if (prev == null) {
+                ht[idx] = current.next.  ;
+</font>            } else {
+
+                prev.next =current.next ;
+            }
+            return;
+        }
+        prev = current;
+        current = current.next;
+       }
+}
+
+task2#
+
+<a name="1"></a><font color="#00FF00"><a href="match56-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_22.gif"/></a>
+
+public static int diamondCount(Stack stack,String str) {
+    int count = 0;
+
+    for (int i = 0; i &lt;str.length( ); i++) {
+        char ch = str.charAt(i);
+
+        if (ch =='&lt;') {
+            stack.push('&lt;'); 
+        } 
+else if (ch == '&gt;') {
+
+            if (!stack.isEmpty()) {
+                stack.pop(); 
+                count++;      
+
+            }
+          }
+    }
+
+    return count;
+</font>}
+
+task3#
+
+<a name="0"></a><font color="#FF0000"><a href="match56-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_25.gif"/></a>
+
+public static String removeConsecDups(String  word) {
+
+
+    LinkedListQueue queue = new LinkedListQueue( );
+
+    for (int i = 0; i &lt; word.length(); i++) {
+
+        queue.enqueue(word.charAt(i));
+      }
+
+    String result = "";
+    char prev = '';
+
+    while (!queue.isEmpty()) 
+{
+        char current = (char)queue.dequeue();
+        if (current != prev) {
+
+            result += current;
+
+            prev = current ;
+</font>
+           }
+    }
+
+    return result;
+</pre>
+</body>
+</html>

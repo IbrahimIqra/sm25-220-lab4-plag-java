@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>A4_Sec14_24101618_Ram-Narayan-Bachhar-Ayosh.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec05_24101617_Shiphayn-Ahmed-Shakib---SHIPHAYN-AHMED-SHAKIB.txt<p></p><pre>
+//Task01
+
+private int hashFunction( Integer key ){
+      if(key== null){
+        return -1;
+      }
+      int target=(key+3)%6;
+<a name="1"></a><font color="#00FF00"><a href="match31-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_28.gif"/></a>
+
+      return target;
+    }
+
+
+public void remove( Integer key ){
+        int index=hashFunction(key);
+        
+        PairNode curr=ht[index];
+        PairNode prev=null;
+
+        while(curr!=null){
+            if(curr.key.equals(key)){
+                if(prev==null){
+                ht[index]=curr.next;
+                }
+                else{
+                    prev.next=curr.next;
+                }
+                return;
+            }
+            prev=curr;
+            curr=curr.next;
+</font>        }
+        
+    }
+
+
+//Task02
+
+
+//Sir tried but getting error in stack class.
+
+
+<a name="2"></a><font color="#0000FF"><a href="match31-0.html#2" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_19.gif"/></a>
+
+public static int diamondCount(Stack stack, String str) {
+        int dCount=0;
+
+        for(int i=0; i&lt;str.length(); i++){
+            char ch=str.charAt(i);
+
+            if(ch=='&lt;'){
+                stack.push(ch);
+            }
+            else if(ch=='&gt;') {
+</font>                if((char)stack.peek()=='&lt;'){
+                    stack.pop();
+                    dCount++;
+               }
+            }
+        }
+        return dCount;
+    }
+
+//Task03
+
+<a name="0"></a><font color="#FF0000"><a href="match31-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_29.gif"/></a>
+
+ LinkedListQueue queue= new LinkedListQueue();
+        for(int i=0; i&lt;word.length(); i++){
+            queue.enqueue(word.charAt(i));
+
+        }
+        String result="";
+
+        if(!queue.isEmpty()){
+            char prev= (char)queue.dequeue();
+            result += prev;
+
+            while(!queue.isEmpty()){
+                char curr=(char) queue.dequeue();
+
+                if(curr!=prev ){
+                    result+=curr;
+                    prev=curr;
+</font>                }
+            }
+        }
+	return result;
+    }</pre>
+</body>
+</html>

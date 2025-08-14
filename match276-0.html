@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>A4_Sec07_23301481_MD.ANTAKI-MUNABBI-LABIB-AHMED.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec07_23301481_MD.ANTAKI-MUNABBI-LABIB-AHMED.txt<p></p><pre>
+ASSIGNMENT 01
+
+public int hashFunction(Integer key) {
+    return (key + 3) % 6;
+}
+
+<a name="0"></a><font color="#FF0000"><a href="match276-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_53.gif"/></a>
+
+public void remove(Integer key) {
+    int idx = hashFunction(key);
+    PairNode current = ht[idx];
+    PairNode prev = null;
+
+    while (current != null) {
+        if (current.key.equals(key)) {
+            if (prev == null) {
+                
+                ht[idx] = current.next;
+            } else {
+                
+                prev.next = current.next;
+            }
+            return;
+        }
+        prev = current;
+        current = current.next;
+    }
+}
+ASSIGNMENT 2
+public static int diamondCount(Stack stack, String str) {
+    int count = 0;
+
+    for (int i = 0; i &lt; str.length(); i++) {
+        char ch = str.charAt(i);
+
+        if (ch == '&lt;') {
+            stack.push(ch);
+        } else if (ch == '&gt;') {
+            if (!stack.isEmpty() &amp;&amp; (char) stack.peek() == '&lt;') {
+</font>                stack.pop();
+                count++;
+            }
+        }
+        
+    }
+
+    return count;
+}
+ASSIGNMET 3
+public static String removeConsecDups(String word) {
+<a name="1"></a><font color="#00FF00"><a href="match276-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_11.gif"/></a>
+
+    LinkedListQueue q = new LinkedListQueue();
+
+    
+    for (int i = 0; i &lt; word.length(); i++) {
+        q.enqueue(word.charAt(i));
+    }
+
+    
+    String result = "";
+</font>    char prev = '\0'; // placeholder for comparison
+
+    while (!q.isEmpty()) {
+        char curr = (char) q.dequeue();
+        if (curr != prev) {
+            result += curr;
+            prev = curr;
+        }
+    }
+
+    return result;
+}
+
+
+
+</pre>
+</body>
+</html>

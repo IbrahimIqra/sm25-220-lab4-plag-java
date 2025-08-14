@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>A4_Sec21_24101414_Lubna-Naznin-Tisha.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec21_24101414_Lubna-Naznin-Tisha.txt<p></p><pre>
+//Assignment1 
+private int hashFunction( Integer key ){
+        
+
+        return (key+3)%6;  
+   }
+<a name="2"></a><font color="#0000FF"><a href="match219-1.html#2" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_11.gif"/></a>
+
+public void remove( Integer key ){
+      int index=hashFunction(key);
+      PairNode temp=ht [index];
+      PairNode n1=null;
+      while(temp!=null){
+        if(temp.key==key ){
+</font>            if( n1==null){
+          ht[index]=temp.next;
+         }
+        
+            else {
+             n1.next=temp.next;
+          
+       }
+        }
+            
+        
+<a name="1"></a><font color="#00FF00"><a href="match219-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_26.gif"/></a>
+
+          n1=temp;
+          temp=temp.next;
+        }
+      }
+
+
+//Assignment 2
+public static int diamondCount(Stack stack, String str) {
+        int Count = 0;
+
+        for (int i = 0; i &lt; str.length(); i++) {
+           char c = str.charAt(i);
+
+            if (c =='&lt;') {
+                stack.push(c);
+            } else{
+              if (c == '&gt;') {
+                if (!stack.isEmpty() &amp;&amp; (char)stack.peek() == '&lt;') {
+</font>                   stack.pop(); 
+                    Count+=1;;
+                }
+            }
+            
+        }
+
+        
+    }
+        return Count;
+    }
+
+//Assignment 3
+
+<a name="0"></a><font color="#FF0000"><a href="match219-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_29.gif"/></a>
+
+public static String removeConsecDups(String word){
+          LinkedListQueue q = new LinkedListQueue();
+
+        for (int i=0; i&lt; word.length();i++) {
+            q.enqueue(word.charAt(i));
+        }
+
+        String Newresult = "";
+        char ch = '0';  
+
+        while (!q.isEmpty()) {
+            char c = (char)q.dequeue();
+          if (c != ch) {
+              
+                Newresult += c;
+               
+                ch = c;
+</font>            }
+        }
+
+        return Newresult;
+
+    }
+
+</pre>
+</body>
+</html>

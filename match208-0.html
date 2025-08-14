@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>A4_Sec13_24101080_Md.-Ifrat-Hossain-Rohan.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec13_24101080_Md.-Ifrat-Hossain-Rohan.txt<p></p><pre>
+//task 1
+
+<a name="0"></a><font color="#FF0000"><a href="match208-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_28.gif"/></a>
+
+ public void remove( Integer key ){
+        // TO DO
+        int i = hashFunction(key);
+        PairNode curr = ht[i];
+        PairNode prev = null;
+
+        while (curr != null) {
+            if (curr.key.equals(key)) {
+                if (prev == null)
+                    ht[i] = curr.next;
+                else
+                    prev.next = curr.next;
+                return;
+            }
+            prev = curr;
+            curr = curr.next;
+</font>        }
+
+    }
+
+//task 2
+
+<a name="1"></a><font color="#00FF00"><a href="match208-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_14.gif"/></a>
+
+public static int diamondCount(Stack stack, String str) {
+        // To Do
+        int diamond = 0;
+
+        for(int i = 0 ; i &lt; str.length() ; i++)
+        {
+            char ch = str.charAt(i);
+</font>
+            if(ch == '&lt;')
+<a name="3"></a><font color="#00FFFF"><a href="match208-1.html#3" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_3_12.gif"/></a>
+
+                stack.push('&lt;');
+            else if (ch == '&gt;') {
+                if (!stack.isEmpty() &amp;&amp; (char)stack.peek() == '&lt;')
+                {
+                    stack.pop();
+                    diamond++;
+                }
+            }
+        }
+        return diamond; // Delete this line
+</font>    }
+
+
+
+
+//task 3
+
+
+ public static String removeConsecDups(String word){
+        //TODO
+        // You MUST create a LinkedListQueue Object to solve this task
+        LinkedListQueue que = new LinkedListQueue();
+
+        if(word == null || word.length() == 0)
+            return word;
+
+        char prev = word.charAt(0);
+        que.enqueue(prev);
+
+        String result = ""+prev;
+
+<a name="2"></a><font color="#0000FF"><a href="match208-1.html#2" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_13.gif"/></a>
+
+        for (int i = 0 ; i &lt; word.length() ; i++)
+        {
+            char curr = word.charAt(i);
+            if(curr != prev)
+            {
+                que.enqueue(curr);
+                result += curr;
+</font>                prev = curr;
+            }
+        }
+	return result; //remove this line once you're ready
+    }</pre>
+</body>
+</html>

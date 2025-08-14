@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>A4_Sec23_24301029_Abid-Hasan.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec21_24101546_Abdulla-Al-Fahad.txt<p></p><pre>
+﻿1. Hashtable: Deletion Operation :
+
+    
+//you need to COMPLETE this method and MUST SUBMIT IT
+    //Complete this method first the write remove
+    private int hashFunction( Integer key ){
+        // TO DO
+
+
+        return (key + 3) % 6;
+    }
+
+
+
+
+ //you need to COMPLETE this method and MUST SUBMIT IT
+    //before writing remove you should complete hashFunction
+    public void remove( Integer key ){
+        // TO DO 
+      int index = hashFunction(key);
+        PairNode head = ht[index];
+
+
+        if (head == null) return;
+
+
+        if (head.key.equals(key)) {
+<a name="2"></a><font color="#0000FF"><a href="match75-0.html#2" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_17.gif"/></a>
+
+            ht[index] = head.next;
+            return;
+        }
+        PairNode prev = head;
+        PairNode curr = head.next;
+
+
+        while (curr != null) {
+            if (curr.key.equals(key)) {
+                prev.next = curr.next;
+                return;
+            }
+            prev = curr;
+            curr = curr.next; 
+</font>    }
+    }
+}
+2. Stack: Diamond Count:
+
+
+public class StackAssgnTaskTester {
+    
+    // You have to write this method
+    // YOU MUST SUBMIT THIS METHOD
+    // Hint: You need to traverse each characters of the String
+<a name="1"></a><font color="#00FF00"><a href="match75-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_18.gif"/></a>
+
+    public static int diamondCount(Stack stack, String str) {
+        // To Do
+    int count = 0;
+    for (int i = 0; i &lt; str.length(); i++) {
+        char c = str.charAt(i);
+        if (c == '&lt;') {
+            stack.push(c);
+        } else if (c == '&gt;') {
+            if (!stack.isEmpty() &amp;&amp; stack.peek().equals('&lt;')) {
+</font>                stack.pop();
+                count++;
+            }
+        }
+    }
+    return count;
+}
+3. Queue: Remove Consecutive Duplicates
+public class RemoveConsecutiveDuplicates{
+ 
+    // You have to write this method
+    // YOU MUST SUBMIT THIS METHOD
+    public static String removeConsecDups(String word){
+ // TODO
+    if (word.length() == 0) {
+        return word;
+    }
+<a name="0"></a><font color="#FF0000"><a href="match75-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_23.gif"/></a>
+
+    LinkedListQueue queue = new LinkedListQueue();
+    char prev = word.charAt(0);
+    queue.enqueue(prev);
+    for (int i = 1; i &lt; word.length(); i++) {
+        char current = word.charAt(i);
+        if (current != prev) {
+            queue.enqueue(current);
+            prev = current;
+        }
+    }
+    String result = "";
+    while (!queue.isEmpty()) {
+        result += queue.dequeue();
+</font>    }
+    return result;
+}</pre>
+</body>
+</html>

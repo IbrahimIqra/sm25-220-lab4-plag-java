@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>A4_Sec03_23301202_Amiyo-Hasan.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec03_24101086_Adrika-Das.txt<p></p><pre>
+  //2
+<a name="1"></a><font color="#00FF00"><a href="match212-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_44.gif"/></a>
+
+public static int diamondCount(Stack stack, String str) {
+        
+    
+      int count = 0;
+
+    for (int i = 0; i &lt; str.length(); i++) {
+        char ch = str.charAt(i);
+
+        if (ch == '&lt;') {
+            stack.push(ch);
+        } else if (ch == '&gt;') {
+            if (!stack.isEmpty() &amp;&amp; (char)stack.peek() == '&lt;') {
+                stack.pop();  
+                count++;      
+            }
+        }
+        
+    }
+
+    return count;
+</font>}
+
+
+//3
+
+
+<a name="0"></a><font color="#FF0000"><a href="match212-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_52.gif"/></a>
+
+public static String removeConsecDups(String word){
+
+        LinkedListQueue queue = new LinkedListQueue();
+
+    
+    for (int i = 0; i &lt; word.length(); i++) {
+        queue.enqueue(word.charAt(i));
+    }
+
+    StringBuilder result = new StringBuilder();
+
+    if (!queue.isEmpty()) {
+        char prev = (char) queue.dequeue(); 
+        result.append(prev);
+
+        while (!queue.isEmpty()) {
+            char current = (char) queue.dequeue();
+            if (current != prev) {
+                result.append(current);
+                prev = current;
+            }
+        }
+    }
+
+    return result.toString();
+</font>}</pre>
+</body>
+</html>

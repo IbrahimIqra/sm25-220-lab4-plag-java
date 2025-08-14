@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>A4_Sec24_1000055811_Md-Sakibul-Islam---MD-SAKIBUL-ISLAM.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec24_1000055811_Md-Sakibul-Islam---MD-SAKIBUL-ISLAM.txt<p></p><pre>
+Assignment Task 01:
+
+
+
+private int hashFunction( Integer key ){
+<a name="1"></a><font color="#00FF00"><a href="match0-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_28.gif"/></a>
+
+    return (key + 3) % ht.length; 
+}
+
+public void remove( Integer key ){
+    int hash = hashFunction(key);
+    if(ht[hash] != null){
+        PairNode current;
+        PairNode prev = null;
+        for(current = ht[hash]; current != null; current = current.next){
+            if(current.key == key){
+                if(prev == null){
+                    ht[hash] = current.next;
+                }
+                else {
+                    prev.next = current.next;
+                }
+                break;
+            }
+            prev = current;
+        }
+    }
+}
+
+
+
+Assignment Task 02:
+</font>
+<a name="0"></a><font color="#FF0000"><a href="match0-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_31.gif"/></a>
+
+public static int diamondCount(Stack stack, String str) {
+    int count = 0;
+    // iterate the string
+    for(int i=0; i&lt; str.length(); i++){
+        if(str.charAt(i) == '.'){
+            continue;
+        }
+        else if(str.charAt(i) == '&lt;'){
+            stack.push("&lt;");
+        }
+        else if(str.charAt(i) == '&gt;' &amp;&amp; stack.peek() != null){
+            String last_elem = stack.peek().toString();
+            if(last_elem.equals("&lt;")){
+                count++;
+                stack.pop();
+            }
+        }
+    }
+
+    return count; 
+</font>}
+
+
+
+Assignment Task 03:
+
+<a name="2"></a><font color="#0000FF"><a href="match0-1.html#2" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_27.gif"/></a>
+
+public static String removeConsecDups(String word){
+    LinkedListQueue queue = new LinkedListQueue();
+    String new_string = "";
+    for(int i=0; i&lt; word.length(); i++){
+        if(queue.isEmpty()){
+            queue.enqueue(word.charAt(i));
+        }
+        else if((char)queue.peek() == word.charAt(i)){
+            continue;
+        }
+        else {
+            new_string += queue.dequeue().toString();
+            queue.enqueue(word.charAt(i));
+        }
+    }
+    new_string += queue.dequeue().toString();
+</font>    return new_string; 
+}
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>A4_Sec26_24101227_Samiha-Noor.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec26_24101227_Samiha-Noor.txt<p></p><pre>
+ //Hashtable: Deletion Operation :
+<a name="1"></a><font color="#00FF00"><a href="match230-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_14.gif"/></a>
+
+private int hashFunction( Integer key ){
+      return (key + 3) % 6;}
+ public void remove( Integer key ){
+    int var = hashFunction(key);
+    PairNode node1 = ht[var];
+    PairNode node2 = null;
+
+    while (node1 != null) {
+</font>        Integer node = node1.key;  
+<a name="2"></a><font color="#0000FF"><a href="match230-1.html#2" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_14.gif"/></a>
+
+    if (node.equals(key)) {   
+            if (node2 == null) {
+                ht[var] = node1.next;
+            } else {
+                node2.next = node1.next;
+            }
+            return;
+        }
+       node2 = node1;
+        node1 = node1.next;
+</font>    }
+    }
+    }            
+
+
+
+//Stack: Diamond Count:
+public class StackAssgnTaskTester {
+<a name="3"></a><font color="#00FFFF"><a href="match230-1.html#3" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_3_12.gif"/></a>
+
+    public static int diamondCount(Stack stack, String str) {
+    int result = 0; 
+for (int i = 0; i &lt; str.length(); i++) {
+        char var = str.charAt(i); 
+</font>
+        if (var == '&lt;') {
+            
+            stack.push(var); 
+        } 
+        else if (var == '&gt;') {
+            if (!stack.isEmpty()) {
+                char top = (Character) stack.peek(); 
+                if (top == '&lt;') {
+                    stack.pop(); 
+                    result++;
+                }
+            }
+        }
+        
+    }
+
+    return result;
+}
+
+
+//Queue: Remove Consecutive Duplicates
+public class RemoveConsecutiveDuplicates{
+<a name="0"></a><font color="#FF0000"><a href="match230-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_18.gif"/></a>
+
+ public static String removeConsecDups(String word){
+    LinkedListQueue list = new LinkedListQueue();
+    for (int i = 0; i &lt; word.length(); i++) {
+        list.enqueue(word.charAt(i)); 
+    }
+
+    String output = "";
+    if (!list.isEmpty()) {
+        char var1 = (Character) list.dequeue(); 
+</font>        output = output + var1; 
+        while (!list.isEmpty()) {
+            char var2 = (Character) list.dequeue(); 
+
+            if (var2 != var1) {
+                output = output + var2; 
+                var1 = var2; 
+            }
+        }
+    }
+
+    return output;
+}
+
+
+</pre>
+</body>
+</html>

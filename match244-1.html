@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>A4_Sec14_24101618_Ram-Narayan-Bachhar-Ayosh.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec08_24301253_Md.-Tauhid-Alam.txt<p></p><pre>
+Assignment 1
+--------------
+
+<a name="0"></a><font color="#FF0000"><a href="match244-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_29.gif"/></a>
+
+ private int hashFunction( Integer key ){
+        return (key+3)%ht.length;
+    }
+
+ public void remove( Integer key ){
+        int index = hashFunction(key);
+        PairNode c = ht[index];
+        PairNode p = null;
+        while(c!=null){
+            if(c.key.equals(key)){
+               if(p==null){
+                ht[index] = c.next;
+               }
+               else{
+                p.next = c.next;
+               } 
+              return;
+            }
+          p = c;
+          c = c.next;
+</font>        }
+
+    }
+
+Assignment 2
+--------------
+
+  public static int diamondCount(Stack stack, String str) {
+      int count = 0;
+
+      for(int i = 0; i &lt; str.length(); ++i) {
+         char c = str.charAt(i);
+         if (c == '&lt;') {
+            stack.push(c);
+         } else if (c == '&gt;' &amp;&amp; !stack.isEmpty()) {
+            stack.pop();
+            count++;
+         }
+      }
+
+      return count;
+   }
+
+
+Assignment 3
+--------------
+
+<a name="1"></a><font color="#00FF00"><a href="match244-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_29.gif"/></a>
+
+public static String removeConsecDups(String word){
+        LinkedListQueue queue = new LinkedListQueue();
+        for(int i = 0; i &lt; word.length(); i++){
+            queue.enqueue(word.charAt(i));
+        }
+        String newString = "";
+        if(!queue.isEmpty()){
+            char head = (char)queue.dequeue();
+            newString+=head;
+            while(!queue.isEmpty()){
+                char tail = (char) queue.dequeue();
+                if(tail!=head){
+                    newString+=tail;
+                    head = tail;
+</font>                }
+            }
+
+
+        }
+        return newString;
+}
+
+
+</pre>
+</body>
+</html>

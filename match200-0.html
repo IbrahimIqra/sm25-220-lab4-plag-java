@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>A4_Sec28_24101436_Alif-Elham.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec28_24101436_Alif-Elham.txt<p></p><pre>
+#####1#####
+//you need to COMPLETE this method and MUST SUBMIT IT
+    //Complete this method first the write remove
+    private int hashFunction( Integer key ){
+<a name="0"></a><font color="#FF0000"><a href="match200-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_27.gif"/></a>
+
+       return Math.abs(key+3)%ht.length;
+    }
+
+
+	//you need to COMPLETE this method and MUST SUBMIT IT
+    //before writing remove you should complete hashFunction
+    public void remove( Integer key ){
+       int ind = hashFunction(key);
+       PairNode cur= ht[ind];
+       PairNode prev=null;
+       while (cur!= null) {
+        if ( cur.key.equals(key)) {
+            if (prev==null) {
+                ht[ind]= cur.next;
+            } else{
+                prev.next=cur.next;
+            } return;
+        }
+        prev= cur;
+        cur=cur.next;
+</font>       } 
+    }
+
+}
+
+#####2#####
+public class StackAssgnTaskTester {
+    
+    // You have to write this method
+    // YOU MUST SUBMIT THIS METHOD
+    // Hint: You need to traverse each characters of the String
+<a name="1"></a><font color="#00FF00"><a href="match200-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_15.gif"/></a>
+
+    public static int diamondCount(Stack stack, String str) {
+       int count=0;
+       for(int i=0;i&lt;str.length();i++){
+        char cur= str.charAt(i);
+        if (cur=='&lt;') {
+            stack.push(cur);
+</font>        } else if(cur=='&gt;'){
+            if (!stack.isEmpty() &amp;&amp; stack.peek().equals('&lt;')) {
+                stack.pop();
+                count++;
+            }
+        }
+       } return count;
+    }
+
+#####3#####
+public class RemoveConsecutiveDuplicates{
+	
+    // You have to write this method
+    // YOU MUST SUBMIT THIS METHOD
+    public static String removeConsecDups(String word){
+        LinkedListQueue queue = new LinkedListQueue();
+        String rslt ="";
+<a name="2"></a><font color="#0000FF"><a href="match200-1.html#2" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_14.gif"/></a>
+
+            char last=0;
+        for (int i=0;i&lt;word.length();i++) {
+            char cur = word.charAt(i);
+            if(i==0 || cur!= last){
+            queue.enqueue(cur);
+            last=cur;}
+</font>        }
+        while (!queue.isEmpty()) {
+            rslt+=(char)queue.dequeue();
+        } return rslt;
+    }</pre>
+</body>
+</html>

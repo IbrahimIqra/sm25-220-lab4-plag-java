@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>A4_Sec14_24101439_Md-Moniruzzaman.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_sec13_24101480_Opika-Ahmmed---OPIKA-AHMMED.txt<p></p><pre>
+/task1
+private int hashFunction( Integer key ){
+return ((key+3)%6);
+}
+<a name="0"></a><font color="#FF0000"><a href="match222-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_15.gif"/></a>
+
+public void remove( Integer key ){
+int index=hashFunction(key);
+PairNode temp=ht[index];
+if(temp==null){
+return;
+}
+if(temp.key.equals(key)){
+ht[index]=temp.next;
+return;
+}
+PairNode prev=temp;
+</font><a name="2"></a><font color="#0000FF"><a href="match222-0.html#2" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_11.gif"/></a>
+
+temp=temp.next;
+while(temp!=null){
+if(temp.key.equals(key)){
+prev.next=temp.next;
+return;
+}
+prev=temp;
+temp=temp.next;
+</font>}
+}
+//task2
+<a name="1"></a><font color="#00FF00"><a href="match222-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_15.gif"/></a>
+
+public static int diamondCount(Stack stack, String str) {
+// To Do
+int count = 0;
+for (int i = 0; i &lt; str.length(); i++) {
+char ch = str.charAt(i);
+if (ch == '&lt;') {
+stack.push(ch);
+}
+else if (ch == '&gt;') {
+</font>while (!stack.isEmpty() &amp;&amp; (Character)stack.peek() != '&lt;') {
+stack.pop();
+}
+if (!stack.isEmpty() &amp;&amp; (Character)stack.peek() == '&lt;') {
+stack.pop();
+count++;
+}
+}
+}
+return count;
+}
+//task3
+public static String removeConsecDups(String word){
+if (word == null || word.length() == 0) {
+<a name="3"></a><font color="#00FFFF"><a href="match222-0.html#3" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_3_10.gif"/></a>
+
+return "";
+}
+LinkedListQueue queue = new LinkedListQueue();
+for (int i = 0; i &lt; word.length(); i++) {
+queue.enqueue(word.charAt(i));
+}
+String result = "";
+</font>char prev = ((Character) queue.dequeue()).charValue();
+result += prev;
+while (!queue.isEmpty()) {
+char current = ((Character) queue.dequeue()).charValue();
+if (current != prev) {
+result += current;
+prev = current;
+}
+}
+return result;
+}</pre>
+</body>
+</html>

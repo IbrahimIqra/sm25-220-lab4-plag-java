@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>A4_Sec25_24110011_Nure-Alam-Siddiquee-Zisan.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec25_24101510_Mohammad-Arfin.txt<p></p><pre>
+//Assignment1:
+<a name="0"></a><font color="#FF0000"><a href="match160-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_35.gif"/></a>
+
+private int hashFunction( Integer key ){
+    	return (key + 3) % ht.length;
+    }
+public void remove( Integer key ){
+        int index=hashFunction(key);   
+        if(ht[index].key==key) {
+        	ht[index]=ht[index].next;
+        	return;
+        }
+        PairNode curr=ht[index];
+        while(curr.next!=null) {
+        	if(curr.next.key==key) {
+        		curr.next=curr.next.next;
+        		return;
+        	}
+        	curr=curr.next;       	
+</font>        }
+    }
+
+//Assingment2:
+public static int diamondCount(Stack stack, String str) {
+        int diamond=0;
+<a name="1"></a><font color="#00FF00"><a href="match160-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_17.gif"/></a>
+
+        for(int i=0;i&lt;str.length();i++) {
+        	char a=str.charAt(i);
+        	if(a=='&lt;') {
+        		stack.push(a);
+        	}
+        	if(a=='&gt;') {
+        		if(!stack.isEmpty()) {
+        			stack.pop();
+        			diamond++;
+        		}
+        	}
+        }
+        return diamond;
+</font>    }
+
+//Assignment3:
+public static String removeConsecDups(String word){
+    	LinkedListQueue p=new LinkedListQueue();
+    	char prev=' ';
+<a name="2"></a><font color="#0000FF"><a href="match160-0.html#2" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_17.gif"/></a>
+
+    	for(int i=0;i&lt;word.length();i++) {
+    		char cur=word.charAt(i);
+    		if (i==0 || cur!=prev) {
+    	            p.enqueue(cur);
+    	            prev=cur;
+    	    }    	
+    	}
+    	String q="";
+    	while(!p.isEmpty()) {
+    		q=q+p.dequeue();
+</font>    	}
+    	return q;
+    }
+</pre>
+</body>
+</html>

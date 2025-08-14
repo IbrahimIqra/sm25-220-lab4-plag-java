@@ -1,0 +1,127 @@
+<html>
+<head>
+<title>A4_Sec14_24241097_Sajidul-karim.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec12_20101605_Sania-Afroj-Sony---SANIA-AFROJ-SONY.txt<p></p><pre>
+////////////////task01/////////////////////
+
+
+
+private int hashFunction( Integer key )
+{
+    return (key + 3) % ht.length;
+}
+
+
+
+
+public void remove( Integer key )
+	{
+		int i = hashFunction(key);
+		PairNode current= ht[i];
+		PairNode previous= null;
+
+		while (current!= null)
+		{
+			if (current.key== key)
+			{
+<a name="2"></a><font color="#0000FF"><a href="match125-0.html#2" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_13.gif"/></a>
+
+				if (previous== null)
+				{
+					ht[i]= current.next;
+				}
+
+				else
+				{
+					previous.next= current.next;
+				}
+				return;
+			}
+
+			previous= current;
+			current= current.next;
+</font>
+		}
+
+		System.out.println("Key not found");
+	}
+
+
+
+
+////////////////task02/////////////////////
+
+
+<a name="1"></a><font color="#00FF00"><a href="match125-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_18.gif"/></a>
+
+	public static int diamondCount(Stack stack, String str)
+	{
+		int c = 0;
+
+		for (int i=0; i&lt;str.length(); i++)
+		{
+			char sym = str.charAt(i);
+
+			if (sym== '&lt;')
+			{
+				stack.push(sym);
+</font>			}
+			
+<a name="0"></a><font color="#FF0000"><a href="match125-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_38.gif"/></a>
+
+			if (sym== '&gt;')
+			{
+				if (!stack.isEmpty())
+				{
+					stack.pop();
+					c++;
+				}
+			}
+
+		}
+
+    return c;
+	}
+
+
+
+
+
+////////////////task03/////////////////////
+
+
+
+	public static String removeConsecDups(String word)
+	{
+		LinkedListQueue q = new LinkedListQueue();
+		char idx = 0;
+
+		for (int i=0; i&lt;word.length(); i++) 
+		{
+			char c = word.charAt(i);
+			
+			if (i==0 || c!=idx) 
+			{
+				q.enqueue(c);
+				idx = c;
+			}
+		}
+
+		String str = "";
+		while (!q.isEmpty()) 
+		{
+			str+= q.dequeue();
+</font>		}
+
+		return str;
+
+	}
+
+
+
+////////////////end/////////////////////</pre>
+</body>
+</html>

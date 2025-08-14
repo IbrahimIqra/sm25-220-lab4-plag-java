@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>A4_Sec13_24101080_Md.-Ifrat-Hossain-Rohan.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec26_24201453_MD.-ZAYED-KHAN.txt<p></p><pre>
+Task1//
+ private int hashFunction( Integer key )
+    {
+        return=((key+3)%ht.length);
+     }
+
+ public void remove( Integer key )
+    {
+       int num = hashFunction(key);
+      if(ht[num]==null)
+         {
+<a name="1"></a><font color="#00FF00"><a href="match170-0.html#1" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_23.gif"/></a>
+
+           return;
+         }   
+         PairNode cur=ht[num];
+         PairNode prev=null;
+         while(cur!=null)
+         {
+          if(cur.key.equals(key))
+          {
+         if(prev==null)
+          {
+           ht[num]=cur.next;
+              }
+             else
+             {
+               prev.next=cur.next;
+               }
+                return;
+            }
+            prev=cur;
+            cur=cur.next;
+</font>         }     
+    }
+
+}
+
+Task2//
+
+<a name="0"></a><font color="#FF0000"><a href="match170-0.html#0" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_29.gif"/></a>
+
+ public static int diamondCount(Stack stack, String str)
+     {
+           int num=0;
+           for(int i=0; i&lt;str.length();i++)
+           {
+            char ch=str.charAt(i);
+          if(ch=='&lt;')
+            {
+         stack.push('&lt;');
+            }
+         else if (ch=='&gt;')
+          {
+       if (!stack.isEmpty() &amp;&amp; (char)stack.peek()=='&lt;')
+          {
+             stack.pop();
+           num++;
+           }
+            }
+           }
+    return num;
+</font>  }
+
+Task3//
+
+
+public static String removeConsecDups(String word)
+ {
+   LinkedListQueue queue = new LinkedListQueue();
+      String fn= ""; 
+       char last='0';
+<a name="2"></a><font color="#0000FF"><a href="match170-0.html#2" target="0"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_2_12.gif"/></a>
+
+    for (int i = 0; i &lt; word.length(); i++)
+     {
+         char current =word.charAt(i);
+          if (current!=last)
+         {
+             queue.enqueue(current);  
+               last =current;  
+</font>        }
+    }
+  while(!queue.isEmpty()) 
+  {
+  fn+=(char)queue.dequeue();  
+    }
+        return fn; 
+}</pre>
+</body>
+</html>

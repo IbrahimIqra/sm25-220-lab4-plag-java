@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>A4_Sec09_24126136_Md.-Zarif-Muntakim---MD.-ZARIF-MUNTAKIM.txt</title>
+</head>
+<body bgcolor="white">
+<hr/>
+A4_Sec09_24126136_Md.-Zarif-Muntakim---MD.-ZARIF-MUNTAKIM.txt<p></p><pre>
+1)
+
+	//you need to COMPLETE this method and MUST SUBMIT IT
+    //Complete this method first the write remove
+<a name="0"></a><font color="#FF0000"><a href="match134-1.html#0" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_0_41.gif"/></a>
+
+    private int hashFunction( Integer key ){
+        if(key == null){
+            return -1;
+        }
+
+        return (key+3) %6; //remove this line
+    }
+
+
+	//you need to COMPLETE this method and MUST SUBMIT IT
+    //before writing remove you should complete hashFunction
+    public void remove( Integer key ){
+         int n1 = hashFunction(key);
+        if (n1 == -1 || ht[n1] == null) {
+            return;
+        }
+
+        PairNode curr = ht[n1];
+        PairNode prev = null;
+
+        while (curr != null) {
+            if (curr.key.equals(key)) {
+                if (prev == null) {
+                    ht[n1] = curr.next;
+                } else {
+                    prev.next = curr.next;
+                }
+                return;
+            }
+            prev = curr;
+            curr = curr.next;
+</font>        }
+    }
+}
+
+
+2)
+
+
+<a name="1"></a><font color="#00FF00"><a href="match134-1.html#1" target="1"><img align="left" alt="other" border="0" src="http://moss.stanford.edu/bitmaps/tm_1_24.gif"/></a>
+
+    public static int diamondCount(Stack stack, String str) {
+       int count = 0;
+        for (int i = 0; i &lt; str.length(); i++) {
+            char c = str.charAt(i);
+            if (c == '&lt;') {
+                stack.push(c);
+            } else if (c == '&gt;') {
+                if (!stack.isEmpty()) {
+                    stack.pop();
+                    count++;
+                }
+            }
+        }
+        return count;
+</font>    }
+
+
+3)
+
+
+    public static String removeConsecDups(String word){
+	   if (word == null || word.isEmpty()) {
+            return word;
+        }
+        StringBuilder r = new StringBuilder();
+        r.append(word.charAt(0));
+
+        for (int i = 1; i &lt; word.length(); i++) {
+            char c = word.charAt(i);
+            if (c != r.charAt(r.length() - 1)) {
+                r.append(c);
+            }
+        }
+
+        return r.toString();
+    }
+
+</pre>
+</body>
+</html>
